@@ -101,19 +101,43 @@ public class FXMLDocumentController implements Initializable {
 
 	// Rezepte herausfiltern
 	@FXML
-	public void Rezepte_finden() {
+	public void Rezepte_finden(ActionEvent event) {
     
 	}
 
 	@FXML
-	public void Rezepte_anzeigen() {
-    
+	public void Rezepte_anzeigen(ActionEvent event) {
+		if (combobox_Beilage.getSelectionModel().getSelectedItem() != null &&     ) {
+			// da fehlt noch was
+			aktualisieren();
+		}
 	}
 	
 	@FXML
-	public void Zutaten_anzeigen() {
-    
-	}
+	public void Zutaten_anzeigen(ActionEvent event) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            if (Rezepte_Liste.getSelectionModel().getSelectedItem() != null) {
+                ResultSet rs = statement.executeQuery("select * FROM Rezepte ");
+                Zutat1_Label.setText(rs.getString("Zutat 1"));
+                Zutat2_Label.setText(rs.getString("Zutat 2"));
+                Zutat3_Label.setText(rs.getString("Zutat 3"));
+                Zutat4_Label.setText(rs.getString("Zutat 4"));
+                Zutat5_Label.setText(rs.getString("Zutat 5"));
+                Zutat6_Label.setText(rs.getString("Zutat 6"));
+                Zutat7_Label.setText(rs.getString("Zutat 7"));
+                Zutat8_Label.setText(rs.getString("Zutat 8"));
+                Zutat9_Label.setText(rs.getString("Zutat 9"));
+                Zutat10_Label.setText(rs.getString("Zutat 10"));
+                Zutat11_Label.setText(rs.getString("Zutat 11"));
+                Zutat12_Label.setText(rs.getString("Zutat 12"));
+            }
+        }
+        catch(SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
 /**
 	// Zutaten waehlen
