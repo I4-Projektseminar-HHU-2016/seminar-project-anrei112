@@ -107,8 +107,10 @@ public class FXMLDocumentController implements Initializable {
 
 	@FXML
 	public void Rezepte_anzeigen(ActionEvent event) {
-		if (combobox_Beilage.getSelectionModel().getSelectedItem() != null &&     ) {
+		if (combobox_Beilage.getSelectionModel().getSelectedItem() != null) {
 			// da fehlt noch was
+			ResultSet rs = statement.executeQuery("select * FROM enthaelt ");
+			Rezepte_Liste.setText(rs.getString("Name_Rezept"));
 			aktualisieren();
 		}
 	}
