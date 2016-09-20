@@ -50,73 +50,83 @@ import javafx.stage.Stage;
 public class FXMLDocumentController implements Initializable {
     Connection connection = null;
 
-	// Listen, Comboboxen und Checkboxen
-	@FXML
-	private ListView<String> Rezepte_Liste;
+    // Listen, Comboboxen und Checkboxen
+    @FXML
+    private ListView<String> Rezepte_Liste;
     private ObservableList<String> Rezepte_Liste_ID;
-	@FXML
-	private ComboBox<String> combobox_Beilage = new ComboBox<String>();
-	private ObservableList<String> Beilage_combobox_ID;
-	@FXML
-	private CheckBox checkbox_Tomaten = new CheckBox();
-	@FXML
-	private CheckBox checkbox_Kidneybohnen = new CheckBox();
-	@FXML
-	private CheckBox checkbox_Paprika = new CheckBox();
-	@FXML
-	private CheckBox checkbox_Brokkoli = new CheckBox();
-	@FXML
-	private CheckBox checkbox_Spinat = new CheckBox();
-	@FXML
-	private Label Zutat1_Label;
-	@FXML
-	private Label Zutat2_Label;
-	@FXML
-	private Label Zutat3_Label;
-	@FXML
-	private Label Zutat4_Label;
-	@FXML
-	private Label Zutat5_Label;
-	@FXML
-	private Label Zutat6_Label;
-	@FXML
-	private Label Zutat7_Label;
-	@FXML
-	private Label Zutat8_Label;
-	@FXML
-	private Label Zutat9_Label;
-	@FXML
-	private Label Zutat10_Label;
-	@FXML
-	private Label Zutat11_Label;
-	@FXML
-	private Label Zutat12_Label;
+    @FXML
+    private ComboBox<String> combobox_Beilage = new ComboBox<String>();
+    private ObservableList<String> Beilage_combobox_ID;
+    @FXML
+    private CheckBox checkbox_Tomaten = new CheckBox();
+    @FXML
+    private CheckBox checkbox_Kidneybohnen = new CheckBox();
+    @FXML
+    private CheckBox checkbox_Paprika = new CheckBox();
+    @FXML
+    private CheckBox checkbox_Brokkoli = new CheckBox();
+    @FXML
+    private CheckBox checkbox_Spinat = new CheckBox();
+    @FXML
+    private Label Zutat1_Label;
+    @FXML
+    private Label Zutat2_Label;
+    @FXML
+    private Label Zutat3_Label;
+    @FXML
+    private Label Zutat4_Label;
+    @FXML
+    private Label Zutat5_Label;
+    @FXML
+    private Label Zutat6_Label;
+    @FXML
+    private Label Zutat7_Label;
+    @FXML
+    private Label Zutat8_Label;
+    @FXML
+    private Label Zutat9_Label;
+    @FXML
+    private Label Zutat10_Label;
+    @FXML
+    private Label Zutat11_Label;
+    @FXML
+    private Label Zutat12_Label;
    
 
-	@FXML
-	private void handleButtonAction(ActionEvent event) {
-		System.out.println("You clicked me!");
-		aktualisieren(); 
-	} 
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+	System.out.println("You clicked me!");
+	aktualisieren(); 
+    } 
 
-	// Rezepte herausfiltern
-	@FXML
-	public void Rezepte_finden(ActionEvent event) {
+    // Rezepte herausfiltern
+    @FXML
+    public void Rezepte_finden(ActionEvent event) {
     
-	}
+    }
 
-	@FXML
-	public void Rezepte_anzeigen(ActionEvent event) {
-		if (combobox_Beilage.getSelectionModel().getSelectedItem() != null) {
-			// da fehlt noch was
-			ResultSet rs = statement.executeQuery("select * FROM enthaelt ");
-			Rezepte_Liste.setText(rs.getString("Name_Rezept"));
-			aktualisieren();
-		}
-	}
+    @FXML
+    public void Rezepte_anzeigen(ActionEvent event) {
+        ObservableList<String> items_Rezepte_Liste = FXCollections.observableArrayList();
+        Rezepte_Liste_ID = FXCollections.observableArrayList();
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            ResultSet rs = statement.executeQuery("select * from enthaelt");
+            while(rs.next()) {
+                items_Rezepte_Liste.add(rs.getString("Name"));
+                Rezepte_Liste_ID.add(rs.getString("Art_ID"));
+            }
+            Rezepte_Liste.setItems(items_Rezepte_Liste);
+        }
+        catch(SQLException e) {
+        System.err.println(e.getMessage());
+        }
+    }
+
 	
-	@FXML
-	public void Zutaten_anzeigen(ActionEvent event) {
+    @FXML
+    public void Zutaten_anzeigen(ActionEvent event) {
         try {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
@@ -172,22 +182,22 @@ public class FXMLDocumentController implements Initializable {
 	
 
      
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		// TODO
-		try {
-			// create a database connection
-			connection = DriverManager.getConnection("jdbc:sqlite:DBS.db");
-		}
-		catch(SQLException e) {
-			// if the error message is "out of memory",
-			// it probably means no database file is found
-			System.err.println(e.getMessage());
-		}
-		aktualisieren();
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+	// TODO
+	try {
+            // create a database connection
+            connection = DriverManager.getConnection("jdbc:sqlite:DBS.db");
 	}
+	catch(SQLException e) {
+            // if the error message is "out of memory",
+            // it probably means no database file is found
+            System.err.println(e.getMessage());
+	}
+	aktualisieren();
+    }
 	
-	public void aktualisieren() {
+    public void aktualisieren() {
         // ComboBox Beilage füllen
         ObservableList<String> Beilage_combobox = FXCollections.observableArrayList();
         try {
@@ -208,7 +218,7 @@ public class FXMLDocumentController implements Initializable {
         }
 
         //Rezepte füllen
-        ObservableList<String> items_Art = FXCollections.observableArrayList();
+        ObservableList<String> items_Rezepte = FXCollections.observableArrayList();
         Rezepte_Liste_ID = FXCollections.observableArrayList();
         try {
             Statement statement = connection.createStatement();
