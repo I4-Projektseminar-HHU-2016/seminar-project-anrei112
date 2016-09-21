@@ -100,12 +100,27 @@ public class FXMLDocumentController implements Initializable {
     } 
 
     // Rezepte herausfiltern
-    @FXML
-    public void Rezepte_finden(ActionEvent event) {
-    
+    private void Rezepte_finden(String tabelle,String feld,String wert,String feld2,String wert2, String feld3,String wert3, String feld4,String wert4, String feld5,String wert5, String feld6,String wert6) {
+        System.out.println("Zeig an!");
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            statement.executeUpdate("SELECT FROM "+tabelle+" WHERE "+feld+"='"+wert+"' AND "+feld2+"='"+wert2+"' AND "+feld3+"='"+wert3+"' AND "+feld4+"='"+wert4+"' AND "+feld5+"='"+wert5+"' AND "+feld6+"='"+wert6+"'");
+        }
+        catch(SQLException e) {
+            System.err.println(e.getMessage());
+        }
     }
-
+    
     @FXML
+    private void Rezepte_anzeigen(ActionEvent event) {
+        if (Rezepte_Liste.getSelectionModel().getSelectedItem() != null) {
+            Rezepte_finden("enthaelt","Name_Zutat 1", Beilage_combobox_ID.get(combobox_Beilage.getSelectionModel().getSelectedIndex()),"Name_Zutat 2",checkbox_Kidneybohnen.getText(),"Name_Zutat 3", checkbox_Paprika.getText(),"Name_Zutat 4", checkbox_Spinat.getText(),"Name_Zutat 5", checkbox_Brokkoli.getText(),"Name_Zutat 6",checkbox_Tomaten.getText());
+            aktualisieren();
+        }
+    }
+    
+  /**  @FXML
     public void Rezepte_anzeigen(ActionEvent event) {
         ObservableList<String> items_Rezepte_Liste = FXCollections.observableArrayList();
         Rezepte_Liste_ID = FXCollections.observableArrayList();
@@ -115,16 +130,15 @@ public class FXMLDocumentController implements Initializable {
             ResultSet rs = statement.executeQuery("select * from enthaelt");
             while(rs.next()) {
                 items_Rezepte_Liste.add(rs.getString("Name"));
-                Rezepte_Liste_ID.add(rs.getString("Art_ID"));
+                Rezepte_Liste_ID.add(rs.getString("Rezepte_ID"));
             }
             Rezepte_Liste.setItems(items_Rezepte_Liste);
         }
         catch(SQLException e) {
         System.err.println(e.getMessage());
         }
-    }
-
-	
+    } */
+    
     @FXML
     public void Zutaten_anzeigen(ActionEvent event) {
         try {
@@ -204,7 +218,6 @@ public class FXMLDocumentController implements Initializable {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
             ResultSet rs = statement.executeQuery("select * from Beilage");
-            Beilage_combobox.add("egal");
             Beilage_combobox.add("Reis");
             Beilage_combobox.add("Nudeln");
             Beilage_combobox.add("Kartoffeln");
@@ -217,7 +230,7 @@ public class FXMLDocumentController implements Initializable {
             System.err.println(e.getMessage());
         }
 
-        //Rezepte füllen
+    /**    //Rezepte füllen
         ObservableList<String> items_Rezepte = FXCollections.observableArrayList();
         Rezepte_Liste_ID = FXCollections.observableArrayList();
         try {
@@ -233,8 +246,8 @@ public class FXMLDocumentController implements Initializable {
         catch(SQLException e) {
             System.err.println(e.getMessage());
         }   
+    } */
+	
+	
     }
-	
-	
-	
 }
