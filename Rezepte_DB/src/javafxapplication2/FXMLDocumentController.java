@@ -53,10 +53,8 @@ public class FXMLDocumentController implements Initializable {
     // Listen, Comboboxen und Checkboxen
     @FXML
     private ListView<String> Rezepte_Liste;
-    private ObservableList<String> Rezepte_Liste_ID;
     @FXML
     private ComboBox<String> combobox_Beilage = new ComboBox<String>();
-    private ObservableList<String> Beilage_combobox_ID;
     @FXML
     private CheckBox checkbox_Tomaten = new CheckBox();
     @FXML
@@ -91,19 +89,8 @@ public class FXMLDocumentController implements Initializable {
     private Label Zutat11_Label;
     @FXML
     private Label Zutat12_Label;
-   
-
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-	System.out.println("You clicked me!");
-	aktualisieren(); 
-    } 
 
     // Rezepte herausfiltern
-    private void Rezepte_finden(String tabelle,String feld,String wert,String feld2,String wert2, String feld3,String wert3, String feld4,String wert4, String feld5,String wert5, String feld6,String wert6) {
-        System.out.println("Zeig an!");
-    }
-    
     @FXML
     private void Rezepte_anzeigen(ActionEvent event) {
 
@@ -144,26 +131,6 @@ public class FXMLDocumentController implements Initializable {
         
     }
     
-  /**
-     * @param event *   @FXML
-    public void Rezepte_anzeigen(ActionEvent event) {
-        ObservableList<String> items_Rezepte_Liste = FXCollections.observableArrayList();
-        Rezepte_Liste_ID = FXCollections.observableArrayList();
-        try {
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("select * from enthaelt");
-            while(rs.next()) {
-                items_Rezepte_Liste.add(rs.getString("Name"));
-                Rezepte_Liste_ID.add(rs.getString("Rezepte_ID"));
-            }
-            Rezepte_Liste.setItems(items_Rezepte_Liste);
-        }
-        catch(SQLException e) {
-        System.err.println(e.getMessage());
-        }
-    } */
-    
     @FXML
     public void Zutaten_anzeigen(ActionEvent event) {
         try {
@@ -190,37 +157,6 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-/**
-	// Zutaten waehlen
-	private void Beilage_waehlen(ActionEvent event) {
-    
-	}
-    
-	private void Tomaten_waehlen(ActionEvent event) {
-    
-	}
-    
-	private void Kidneybohnen_waehlen(ActionEvent event) {
-    
-	}
-
-	private void Paprika_waehlen(ActionEvent event) {
-    
-	}
-
-	private void Brokkoli_waehlen(ActionEvent event) {
-    
-	}
-
-	private void Spinat_waehlen(ActionEvent event) {
-    
-	}
-	**/
-
-
-	
-
-     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 	// TODO
@@ -251,25 +187,5 @@ public class FXMLDocumentController implements Initializable {
         catch(SQLException e) {
             System.err.println(e.getMessage());
         }
-
-    /**    //Rezepte füllen
-        ObservableList<String> items_Rezepte = FXCollections.observableArrayList();
-        Rezepte_Liste_ID = FXCollections.observableArrayList();
-        try {
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("select * from Rezepte");
-            while(rs.next()) {
-                items_Rezepte.add(rs.getString("Name"));
-                Rezepte_Liste_ID.add(rs.getString("Name"));
-            }
-            Rezepte_Liste.setItems(items_Rezepte);
-        }
-        catch(SQLException e) {
-            System.err.println(e.getMessage());
-        }   
-    } */
-	
-	
     }
 }
