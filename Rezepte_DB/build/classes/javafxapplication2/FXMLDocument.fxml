@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="671.62109375" prefWidth="738.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication2.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="671.62109375" prefWidth="724.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication2.FXMLDocumentController">
   <children>
     <Label fx:id="label" layoutX="25.0" layoutY="14.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="294.0" text="Bitte wählen Sie die gewünschten Zutaten:">
       <font>
         <Font name="System Bold" size="14.0" fx:id="x3" />
       </font>
     </Label>
-    <TabPane cache="false" focusTraversable="true" layoutX="55.0" layoutY="50.0" prefHeight="257.0" prefWidth="235.0" tabClosingPolicy="UNAVAILABLE" visible="true">
+    <TabPane cache="false" focusTraversable="true" layoutX="25.0" layoutY="50.0" prefHeight="248.0" prefWidth="235.0" tabClosingPolicy="UNAVAILABLE" visible="true">
       <tabs>
         <Tab id="Art_Tab" closable="true" text="Beilage">
           <content>
@@ -37,7 +37,7 @@
         </Tab>
         <Tab id="Fall_Tab" text="Gemüse">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="235.0">
               <children>
                 <CheckBox fx:id="checkbox_Tomaten" layoutX="59.0" layoutY="24.0" mnemonicParsing="false" prefWidth="117.0" selected="false" text="Tomaten" />
                 <CheckBox fx:id="checkbox_Kidneybohnen" layoutX="59.0" layoutY="67.0" mnemonicParsing="false" prefWidth="117.0" text="Kidneybohnen" />
@@ -55,29 +55,29 @@
         </Tab>
       </tabs>
     </TabPane>
-    <Label id="label" fx:id="Zutat10_Label" layoutX="533.0" layoutY="603.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 10">
+    <Label id="label" fx:id="Zutat10_Label" layoutX="516.0" layoutY="532.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 10">
       <font>
         <Font size="12.0" fx:id="x1" />
       </font>
     </Label>
-    <Label id="label" fx:id="Zutat7_Label" font="$x1" layoutX="336.0" layoutY="573.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 7" />
-    <Label id="label" fx:id="Zutat4_Label" font="$x1" layoutX="533.0" layoutY="510.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 4" />
-    <Label id="label" fx:id="Zutat1_Label" font="$x1" layoutX="336.0" layoutY="478.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 1" />
-    <Label id="label" fx:id="Zutat2_Label" font="$x1" layoutX="533.0" layoutY="478.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 2" />
-    <Label id="label" fx:id="Zutat3_Label" font="$x1" layoutX="336.0" layoutY="510.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 3" />
-    <Label id="label" fx:id="Zutat5_Label" font="$x1" layoutX="336.0" layoutY="540.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 5" />
-    <Label id="label" fx:id="Zutat6_Label" font="$x1" layoutX="533.0" layoutY="540.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 6" />
-    <Label id="label" fx:id="Zutat8_Label" font="$x1" layoutX="533.0" layoutY="573.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 8" />
-    <Label id="label" fx:id="Zutat9_Label" font="$x1" layoutX="336.0" layoutY="603.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 9" />
-    <Label id="label" fx:id="Zutat11_Label" font="$x1" layoutX="336.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 11" />
-    <Label id="label" fx:id="Zutat12_Label" font="$x1" layoutX="533.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 12" />
-    <ListView fx:id="Rezepte_Liste" layoutX="90.0" layoutY="418.0" prefHeight="239.0" prefWidth="165.0" />
-    <Button id="Rezept_anzeigen" layoutX="428.0" layoutY="430.0" onAction="#Zutaten_anzeigen" text="Zutaten des Rezepts anzeigen">
+    <Label id="label" fx:id="Zutat7_Label" font="$x1" layoutX="319.0" layoutY="502.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 7" />
+    <Label id="label" fx:id="Zutat4_Label" font="$x1" layoutX="516.0" layoutY="439.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 4" />
+    <Label id="label" fx:id="Zutat1_Label" font="$x1" layoutX="319.0" layoutY="407.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 1" />
+    <Label id="label" fx:id="Zutat2_Label" font="$x1" layoutX="516.0" layoutY="407.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 2" />
+    <Label id="label" fx:id="Zutat3_Label" font="$x1" layoutX="319.0" layoutY="439.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 3" />
+    <Label id="label" fx:id="Zutat5_Label" font="$x1" layoutX="319.0" layoutY="469.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 5" />
+    <Label id="label" fx:id="Zutat6_Label" font="$x1" layoutX="516.0" layoutY="469.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 6" />
+    <Label id="label" fx:id="Zutat8_Label" font="$x1" layoutX="516.0" layoutY="502.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 8" />
+    <Label id="label" fx:id="Zutat9_Label" font="$x1" layoutX="319.0" layoutY="532.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 9" />
+    <Label id="label" fx:id="Zutat11_Label" font="$x1" layoutX="319.0" layoutY="564.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 11" />
+    <Label id="label" fx:id="Zutat12_Label" font="$x1" layoutX="516.0" layoutY="564.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 12" />
+    <ListView fx:id="Rezepte_Liste" layoutX="25.0" layoutY="407.0" prefHeight="239.0" prefWidth="265.0" />
+    <Button id="Rezept_anzeigen" layoutX="404.0" layoutY="366.0" onAction="#Zutaten_anzeigen" text="Zutaten des Rezepts anzeigen">
       <font>
         <Font size="14.0" fx:id="x2" />
       </font>
     </Button>
-    <Label id="label" font="$x3" layoutX="90.0" layoutY="372.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Ihre Rezeptvorschläge:" />
-    <Button id="Rezepte_finden" font="$x2" layoutX="114.0" layoutY="323.0" onAction="#Rezepte_anzeigen" text="Rezepte finden" />
+    <Label id="label" font="$x3" layoutX="75.0" layoutY="361.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Ihre Rezeptvorschläge:" />
+    <Button id="Rezepte_finden" font="$x2" layoutX="84.0" layoutY="320.0" onAction="#Rezepte_anzeigen" text="Rezepte finden" />
   </children>
 </AnchorPane>

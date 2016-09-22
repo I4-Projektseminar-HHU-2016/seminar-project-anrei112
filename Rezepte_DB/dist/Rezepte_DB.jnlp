@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Rezepte_DB.jar" size="5681" download="eager" />
+    <jar href="Rezepte_DB.jar" size="5682" download="eager" />
     <jar href="lib\sqlitejdbc-3.8.7.jar" size="3924079" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Rezepte_DB" >
