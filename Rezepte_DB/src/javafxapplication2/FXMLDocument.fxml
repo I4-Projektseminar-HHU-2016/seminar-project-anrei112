@@ -39,13 +39,7 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <ListView fx:id="Fall_Liste" layoutX="555.0" layoutY="0.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="löschen" layoutX="578.0" layoutY="258.0" onAction="#Fall_loeschen" text="Eintrag löschen">
-                  <font>
-                    <Font size="14.0" fx:id="x2" />
-                  </font>
-                </Button>
-                <CheckBox fx:id="checkbox_Tomaten" layoutX="59.0" layoutY="24.0" mnemonicParsing="false" prefWidth="117.0" text="Tomaten" />
+                <CheckBox fx:id="checkbox_Tomaten" layoutX="59.0" layoutY="24.0" mnemonicParsing="false" prefWidth="117.0" selected="false" text="Tomaten" />
                 <CheckBox fx:id="checkbox_Kidneybohnen" layoutX="59.0" layoutY="67.0" mnemonicParsing="false" prefWidth="117.0" text="Kidneybohnen" />
                 <CheckBox fx:id="checkbox_Paprika" layoutX="59.0" layoutY="105.0" mnemonicParsing="false" prefWidth="117.0" text="Paprika" />
                 <CheckBox fx:id="checkbox_Brokkoli" layoutX="59.0" layoutY="146.0" mnemonicParsing="false" prefWidth="117.0" text="Brokkoli" />
@@ -56,11 +50,7 @@
         </Tab>
         <Tab id="Bezirk_Tab" text="Erweiterbar">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="262.0" onAction="#Bezirk_loeschen" text="Eintrag löschen" />
-              </children>
-            </AnchorPane>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
           </content>
         </Tab>
       </tabs>
@@ -82,8 +72,12 @@
     <Label id="label" fx:id="Zutat11_Label" font="$x1" layoutX="336.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 11" />
     <Label id="label" fx:id="Zutat12_Label" font="$x1" layoutX="533.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 12" />
     <ListView fx:id="Rezepte_Liste" layoutX="90.0" layoutY="418.0" prefHeight="239.0" prefWidth="165.0" />
-    <Button id="Rezept_anzeigen" font="$x2" layoutX="428.0" layoutY="430.0" text="Zutaten des Rezepts anzeigen" />
+    <Button id="Rezept_anzeigen" layoutX="428.0" layoutY="430.0" onAction="#Zutaten_anzeigen" text="Zutaten des Rezepts anzeigen">
+      <font>
+        <Font size="14.0" fx:id="x2" />
+      </font>
+    </Button>
     <Label id="label" font="$x3" layoutX="90.0" layoutY="372.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Ihre Rezeptvorschläge:" />
-    <Button id="Rezepte_finden" font="$x2" layoutX="114.0" layoutY="323.0" onAction="#Rezepte_finden" text="Rezepte finden" />
+    <Button id="Rezepte_finden" font="$x2" layoutX="114.0" layoutY="323.0" onAction="#Rezepte_anzeigen" text="Rezepte finden" />
   </children>
 </AnchorPane>

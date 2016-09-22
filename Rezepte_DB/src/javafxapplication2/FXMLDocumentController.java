@@ -102,25 +102,50 @@ public class FXMLDocumentController implements Initializable {
     // Rezepte herausfiltern
     private void Rezepte_finden(String tabelle,String feld,String wert,String feld2,String wert2, String feld3,String wert3, String feld4,String wert4, String feld5,String wert5, String feld6,String wert6) {
         System.out.println("Zeig an!");
-        try {
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            statement.executeUpdate("SELECT FROM "+tabelle+" WHERE "+feld+"='"+wert+"' AND "+feld2+"='"+wert2+"' AND "+feld3+"='"+wert3+"' AND "+feld4+"='"+wert4+"' AND "+feld5+"='"+wert5+"' AND "+feld6+"='"+wert6+"'");
-        }
-        catch(SQLException e) {
-            System.err.println(e.getMessage());
-        }
     }
     
     @FXML
     private void Rezepte_anzeigen(ActionEvent event) {
-        if (Rezepte_Liste.getSelectionModel().getSelectedItem() != null) {
-            Rezepte_finden("enthaelt","Name_Zutat 1", Beilage_combobox_ID.get(combobox_Beilage.getSelectionModel().getSelectedIndex()),"Name_Zutat 2",checkbox_Kidneybohnen.getText(),"Name_Zutat 3", checkbox_Paprika.getText(),"Name_Zutat 4", checkbox_Spinat.getText(),"Name_Zutat 5", checkbox_Brokkoli.getText(),"Name_Zutat 6",checkbox_Tomaten.getText());
-            aktualisieren();
+
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            String queryString = "SELECT Name_Rezept FROM enthaelt WHERE 1=1 ";
+            if (combobox_Beilage.getSelectionModel().getSelectedIndex()>=0) {
+                queryString = queryString+" AND Name_Zutat_1 = '"+combobox_Beilage.getSelectionModel().getSelectedItem()+"'";
+            }
+            if (checkbox_Kidneybohnen.isSelected()) {
+                queryString = queryString+" AND Name_Zutat_2 = '"+checkbox_Kidneybohnen.getText()+"'";
+            }
+            if (checkbox_Paprika.isSelected()) {
+                queryString = queryString+" AND Name_Zutat_3 = '"+checkbox_Paprika.getText()+"'";
+            }
+            if (checkbox_Spinat.isSelected()) {
+                queryString = queryString+" AND Name_Zutat_4 = '"+checkbox_Spinat.getText()+"'";
+            }
+            if (checkbox_Brokkoli.isSelected()) {
+                queryString = queryString+" AND Name_Zutat_5 = '"+checkbox_Brokkoli.getText()+"'";
+            }
+            if (checkbox_Tomaten.isSelected()) {
+                queryString = queryString+" AND Name_Zutat_6 = '"+checkbox_Tomaten.getText()+"'";
+            }
+            System.out.println(combobox_Beilage.getSelectionModel().getSelectedIndex() + " " + queryString);
+            ResultSet rs = statement.executeQuery(queryString);
+            Rezepte_Liste.getItems().clear();
+            while(rs.next()) {
+                Rezepte_Liste.getItems().add(rs.getString("Name_Rezept"));
+            }
         }
+        catch(SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+            aktualisieren();
+        
     }
     
-  /**  @FXML
+  /**
+     * @param event *   @FXML
     public void Rezepte_anzeigen(ActionEvent event) {
         ObservableList<String> items_Rezepte_Liste = FXCollections.observableArrayList();
         Rezepte_Liste_ID = FXCollections.observableArrayList();
@@ -145,19 +170,19 @@ public class FXMLDocumentController implements Initializable {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
             if (Rezepte_Liste.getSelectionModel().getSelectedItem() != null) {
-                ResultSet rs = statement.executeQuery("select * FROM Rezepte ");
-                Zutat1_Label.setText(rs.getString("Zutat 1"));
-                Zutat2_Label.setText(rs.getString("Zutat 2"));
-                Zutat3_Label.setText(rs.getString("Zutat 3"));
-                Zutat4_Label.setText(rs.getString("Zutat 4"));
-                Zutat5_Label.setText(rs.getString("Zutat 5"));
-                Zutat6_Label.setText(rs.getString("Zutat 6"));
-                Zutat7_Label.setText(rs.getString("Zutat 7"));
-                Zutat8_Label.setText(rs.getString("Zutat 8"));
-                Zutat9_Label.setText(rs.getString("Zutat 9"));
-                Zutat10_Label.setText(rs.getString("Zutat 10"));
-                Zutat11_Label.setText(rs.getString("Zutat 11"));
-                Zutat12_Label.setText(rs.getString("Zutat 12"));
+                ResultSet rs = statement.executeQuery("select * FROM Rezepte WHERE Name_Rezept = '"+Rezepte_Liste.getSelectionModel().getSelectedItem()+"'");
+                Zutat1_Label.setText(rs.getString("Zutat_1"));
+                Zutat2_Label.setText(rs.getString("Zutat_2"));
+                Zutat3_Label.setText(rs.getString("Zutat_3"));
+                Zutat4_Label.setText(rs.getString("Zutat_4"));
+                Zutat5_Label.setText(rs.getString("Zutat_5"));
+                Zutat6_Label.setText(rs.getString("Zutat_6"));
+                Zutat7_Label.setText(rs.getString("Zutat_7"));
+                Zutat8_Label.setText(rs.getString("Zutat_8"));
+                Zutat9_Label.setText(rs.getString("Zutat_9"));
+                Zutat10_Label.setText(rs.getString("Zutat_10"));
+                Zutat11_Label.setText(rs.getString("Zutat_11"));
+                Zutat12_Label.setText(rs.getString("Zutat_12"));
             }
         }
         catch(SQLException e) {
@@ -201,7 +226,7 @@ public class FXMLDocumentController implements Initializable {
 	// TODO
 	try {
             // create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:DBS.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:Rezepte.db");
 	}
 	catch(SQLException e) {
             // if the error message is "out of memory",
@@ -217,12 +242,9 @@ public class FXMLDocumentController implements Initializable {
         try {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("select * from Beilage");
-            Beilage_combobox.add("Reis");
-            Beilage_combobox.add("Nudeln");
-            Beilage_combobox.add("Kartoffeln");
+            ResultSet rs = statement.executeQuery("select * from Zutaten WHERE ist_Beilage = 1");
             while(rs.next()) {
-                Beilage_combobox.add(rs.getString("Name"));
+                Beilage_combobox.add(rs.getString("Zutat_Name"));
             }
             combobox_Beilage.setItems(Beilage_combobox);
         }

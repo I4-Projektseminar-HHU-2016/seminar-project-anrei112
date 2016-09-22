@@ -9,199 +9,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="699.62109375" prefWidth="754.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication2.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="671.62109375" prefWidth="738.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication2.FXMLDocumentController">
   <children>
-    <Label fx:id="label" layoutX="7.0" layoutY="0.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Entitäten">
+    <Label fx:id="label" layoutX="25.0" layoutY="14.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="294.0" text="Bitte wählen Sie die gewünschten Zutaten:">
       <font>
-        <Font size="18.0" fx:id="x1" />
+        <Font name="System Bold" size="14.0" fx:id="x3" />
       </font>
     </Label>
-    <TabPane cache="false" focusTraversable="true" layoutX="6.0" layoutY="30.0" prefHeight="338.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE" visible="true">
+    <TabPane cache="false" focusTraversable="true" layoutX="55.0" layoutY="50.0" prefHeight="257.0" prefWidth="235.0" tabClosingPolicy="UNAVAILABLE" visible="true">
       <tabs>
-        <Tab id="Art_Tab" closable="true" text="Art">
+        <Tab id="Art_Tab" closable="true" text="Beilage">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="428.0">
               <children>
-                <ListView fx:id="Art_Liste" layoutX="555.0" layoutY="0.0" prefHeight="239.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" layoutX="379.0" layoutY="14.0" onAction="#Art_Eintrag_anzeigen" text="Eintrag anzeigen">
-                  <font>
-                    <Font size="14.0" fx:id="x2" />
-                  </font>
-                </Button>
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="258.0" onAction="#Art_loeschen" text="Eintrag löschen" />
-                <Label id="label" layoutX="40.0" layoutY="52.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:">
-                  <font>
-                    <Font size="10.0" fx:id="x3" />
-                  </font>
-                </Label>
-                <Label id="label" font="$x3" layoutX="36.0" layoutY="87.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Art_ID:" />
-                <Label id="label" font="$x3" layoutX="6.0" layoutY="117.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="67.0" text="Beschreibung:" />
-                <Label id="label" fx:id="Art_ID_Label" layoutX="348.0" layoutY="88.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="">
-                  <font>
-                    <Font size="12.0" fx:id="x4" />
-                  </font>
-                </Label>
-                <TextField id="Sucheingabe" fx:id="Art_Name_Text" layoutX="348.0" layoutY="56.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Art_Beschreibung_Text" layoutX="348.0" layoutY="122.0" prefWidth="200.0" text="" />
-                <Button id="ändern" font="$x2" layoutX="385.0" layoutY="182.0" onAction="#Art_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Art_Name" layoutX="104.0" layoutY="56.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Art_Beschreibung" layoutX="104.0" layoutY="122.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Art__ID" layoutX="104.0" layoutY="88.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="121.0" layoutY="182.0" onAction="#neuer_Eintrag_Art" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Fall_Tab" text="Fall">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Fall_Liste" layoutX="555.0" layoutY="0.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="367.0" layoutY="14.0" onAction="#Fall_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="258.0" onAction="#Fall_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="374.0" layoutY="215.0" onAction="#Fall_Eintrag_aendern" text="Eintrag ändern" />
-                <Label id="label" font="$x3" layoutX="67.0" layoutY="70.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:" />
-                <Label id="label" font="$x3" layoutX="63.0" layoutY="105.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Fall_ID:" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="135.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="86.0" text="Eröffnungsdatum:" />
-                <Label id="label" font="$x3" layoutX="42.0" layoutY="169.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="58.0" text="Enddatum:" />
-                <Label id="label" fx:id="Fall_ID_Label" font="$x4" layoutX="337.0" layoutY="106.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Enddatum_Text" layoutX="336.0" layoutY="173.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Eröffnungsdatum_Text" layoutX="337.0" layoutY="143.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Name_Text" layoutX="337.0" layoutY="74.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Enddatum" layoutX="104.0" layoutY="173.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Eröffnungsdatum" layoutX="105.0" layoutY="143.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall_Name" layoutX="105.0" layoutY="74.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Fall__ID" layoutX="105.0" layoutY="106.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="121.0" layoutY="215.0" onAction="#neuer_Eintrag_Fall" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Bezirk_Tab" text="Bezirk">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Bezirk_Liste" layoutX="555.0" layoutY="0.0" prefHeight="241.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="373.0" layoutY="17.0" onAction="#Bezirk_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="262.0" onAction="#Bezirk_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="379.0" layoutY="156.0" onAction="#Bezirk_Eintrag_aendern" text="Eintrag ändern" />
-                <Label id="label" font="$x3" layoutX="34.0" layoutY="68.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="99.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="57.0" text="Bezirks_ID:" />
-                <Label id="label" fx:id="Bezirks_ID_Label" font="$x4" layoutX="342.0" layoutY="103.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Bezirk_Name_Text" layoutX="337.0" layoutY="72.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Bezirk_Name" layoutX="100.0" layoutY="72.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Bezirks__ID" layoutX="100.0" layoutY="103.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="117.0" layoutY="156.0" onAction="#neuer_Eintrag_Bezirk" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Verbrechen_Tab" text="Verbrechen">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Verbrechen_Liste" layoutX="555.0" layoutY="0.0" prefHeight="241.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="381.0" layoutY="25.0" onAction="#Verbrechen_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="257.0" onAction="#Verbrechen_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="382.0" layoutY="257.0" onAction="#Verbrechen_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Verbrechen_Name_Text" layoutX="345.0" layoutY="64.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Verbrechen_Datum_Text" layoutX="345.0" layoutY="124.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="62.0" layoutY="60.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:" />
-                <Label id="label" font="$x3" layoutX="60.0" layoutY="120.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Datum:" />
-                <Label id="label" font="$x3" layoutX="60.0" layoutY="153.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Art_ID:" />
-                <Label id="label" font="$x3" layoutX="42.0" layoutY="217.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="58.0" text="Bezirks_ID:" />
-                <Label id="label" fx:id="Verbrechens_ID_Label" font="$x4" layoutX="345.0" layoutY="94.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="24.0" layoutY="90.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="75.0" text="Verbrechens_ID:" />
-                <Label id="label" font="$x3" layoutX="57.0" layoutY="187.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Fall_ID:" />
-                <Label id="label" fx:id="Verbrechen_Art_Label" font="$x4" layoutX="345.0" layoutY="157.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Verbrechen_Fall_Label" font="$x4" layoutX="345.0" layoutY="191.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Verbrechen_Bezirk_Label" font="$x4" layoutX="345.0" layoutY="221.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Verbrechen_Art" layoutX="119.0" layoutY="153.0" prefHeight="22.0" prefWidth="198.0" promptText="Art_ID">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="Verbrechen_Name" layoutX="119.0" layoutY="64.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Verbrechen_Datum" layoutX="119.0" layoutY="124.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Verbrechen_Fall" layoutX="119.0" layoutY="187.0" prefHeight="22.0" prefWidth="198.0" promptText="Fall_ID">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_Verbrechen_Bezirk" layoutX="119.0" layoutY="221.0" prefHeight="22.0" prefWidth="198.0" promptText="Bezirks_ID">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="Verbrechens__ID" layoutX="119.0" layoutY="94.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="135.0" layoutY="257.0" onAction="#neuer_Eintrag_Verbrechen" text="neuen Eintrag erstellen" />
-                <ComboBox fx:id="combobox_Art" layoutX="14.0" layoutY="14.0" onAction="#aktualisieren" prefHeight="25.0" prefWidth="99.0" promptText="Art">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox fx:id="combobox_Bezirk" layoutX="120.0" layoutY="14.0" onAction="#aktualisieren" prefHeight="25.0" prefWidth="99.0" promptText="Bezirk">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Button id="filtern" font="$x2" layoutX="230.0" layoutY="14.0" onAction="#handleButtonAction" text="filtern" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Notiz_Tab" text="Notiz">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Notiz_Liste" layoutX="555.0" layoutY="0.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="360.0" layoutY="23.0" onAction="#Notiz_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="258.0" onAction="#Notiz_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="366.0" layoutY="258.0" onAction="#Notiz_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Notiz_Anlegedatum_Text" layoutX="329.0" layoutY="98.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Notiz_Text_Text" layoutX="329.0" layoutY="128.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="32.0" layoutY="65.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="43.0" text="Notiz_ID:" />
-                <Label id="label" font="$x3" layoutX="52.0" layoutY="124.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Text:" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="184.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="58.0" text="Personen_ID:" />
-                <Label id="label" fx:id="Notiz_ID_Label" font="$x4" layoutX="329.0" layoutY="69.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="10.0" layoutY="94.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="75.0" text="Anlegedatum:" />
-                <Label id="label" font="$x3" layoutX="40.0" layoutY="154.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Fall_ID:" />
-                <Label id="label" fx:id="Notiz_Fall_Label" font="$x4" layoutX="329.0" layoutY="158.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Notiz_Person_Label" font="$x4" layoutX="329.0" layoutY="188.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Notiz_Anlegedatum" layoutX="109.0" layoutY="98.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Notiz_Text" layoutX="109.0" layoutY="128.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Notiz__ID" layoutX="109.0" layoutY="69.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="126.0" layoutY="258.0" onAction="#neuer_Eintrag_Notiz" text="neuen Eintrag erstellen" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Notiz_Fall" layoutX="111.0" layoutY="158.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Falls:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_Notiz_Person" layoutX="111.0" layoutY="188.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Person:">
+                <ComboBox fx:id="combobox_Beilage" layoutX="59.0" layoutY="35.0" prefHeight="21.0" prefWidth="117.0" promptText="Beilage">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
@@ -214,407 +35,49 @@
             </AnchorPane>
           </content>
         </Tab>
-        <Tab id="Indiz_Tab" text="Indiz">
+        <Tab id="Fall_Tab" text="Gemüse">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <ListView fx:id="Indiz_Liste" layoutX="540.0" layoutY="0.0" prefHeight="240.0" prefWidth="180.0" />
-                <Button id="löschen" font="$x2" layoutX="571.0" layoutY="258.0" onAction="#Indiz_loeschen" text="Eintrag löschen" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="362.0" layoutY="4.0" onAction="#Indiz_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="ändern" font="$x2" layoutX="346.0" layoutY="269.0" onAction="#Indiz_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Indiz_Anlegedatum_Text" layoutX="325.0" layoutY="151.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Indiz_Text_Text" layoutX="325.0" layoutY="181.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="32.0" layoutY="118.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="43.0" text="Indiz_ID:" />
-                <Label id="label" font="$x3" layoutX="52.0" layoutY="177.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Text:" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="237.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="58.0" text="Personen_ID:" />
-                <Label id="label" fx:id="Indiz_ID_Label" font="$x4" layoutX="325.0" layoutY="122.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="10.0" layoutY="147.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="75.0" text="Anlegedatum:" />
-                <Label id="label" font="$x3" layoutX="40.0" layoutY="207.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Fall_ID:" />
-                <Label id="label" fx:id="Indiz_Fall_Label" font="$x4" layoutX="325.0" layoutY="211.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Indiz_Person_Label" font="$x4" layoutX="325.0" layoutY="241.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Indiz_Anlegedatum" layoutX="102.0" layoutY="151.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Indiz_Text" layoutX="102.0" layoutY="182.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Indiz_Fall" layoutX="104.0" layoutY="211.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Falls:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_Indiz_Person" layoutX="104.0" layoutY="240.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Person:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Button id="Fall_Eintrag" font="$x2" layoutX="119.0" layoutY="276.0" onAction="#neuer_Eintrag_Indiz" text="neuen Eintrag erstellen" />
-                <TextField id="Sucheingabe" fx:id="Indiz__ID" layoutX="104.0" layoutY="122.0" prefWidth="200.0" text="" />
-                <ImageView fx:id="Indiz_Bild" fitHeight="93.0" fitWidth="124.0" layoutX="137.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="Indiz_Bild_Image" fitHeight="93.0" fitWidth="124.0" layoutX="404.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="10.0" layoutY="35.0" onAction="#Image_laden" text="Bild hochladen" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="304.0" layoutY="35.0" onAction="#Image_aendern" text="Bild ändern" />
+                <CheckBox fx:id="checkbox_Tomaten" layoutX="59.0" layoutY="24.0" mnemonicParsing="false" prefWidth="117.0" selected="false" text="Tomaten" />
+                <CheckBox fx:id="checkbox_Kidneybohnen" layoutX="59.0" layoutY="67.0" mnemonicParsing="false" prefWidth="117.0" text="Kidneybohnen" />
+                <CheckBox fx:id="checkbox_Paprika" layoutX="59.0" layoutY="105.0" mnemonicParsing="false" prefWidth="117.0" text="Paprika" />
+                <CheckBox fx:id="checkbox_Brokkoli" layoutX="59.0" layoutY="146.0" mnemonicParsing="false" prefWidth="117.0" text="Brokkoli" />
+                <CheckBox fx:id="checkbox_Spinat" layoutX="59.0" layoutY="183.0" mnemonicParsing="false" prefWidth="117.0" text="Spinat" />
               </children>
             </AnchorPane>
           </content>
         </Tab>
-        <Tab id="Behörde_Tab" text="Behörde">
+        <Tab id="Bezirk_Tab" text="Erweiterbar">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Behörde_Liste" layoutX="555.0" layoutY="1.0" prefHeight="241.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="360.0" layoutY="14.0" onAction="#Behörde_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="257.0" onAction="#Behoerde_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="366.0" layoutY="225.0" onAction="#Behörde_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Behörde_Name_Text" layoutX="329.0" layoutY="65.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Behörde_Typ_Text" layoutX="329.0" layoutY="125.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="45.0" layoutY="65.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:" />
-                <Label id="label" font="$x3" layoutX="52.0" layoutY="121.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="25.0" text="Typ:" />
-                <Label id="label" font="$x3" layoutX="24.0" layoutY="153.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="50.0" text="Bezirks_ID:" />
-                <Label id="label" fx:id="Behörden_ID_Label" font="$x4" layoutX="329.0" layoutY="95.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="91.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Behörden_ID:" />
-                <Label id="label" fx:id="Behörde_Bezirk_Label" font="$x4" layoutX="329.0" layoutY="157.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="119.0" layoutY="225.0" onAction="#neuer_Eintrag_Behörde" text="neuen Eintrag erstellen" />
-                <TextField id="Sucheingabe" fx:id="Behörde_Name" layoutX="107.0" layoutY="65.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Behörde_Typ" layoutX="107.0" layoutY="125.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Behörde_Bezirk" layoutX="107.0" layoutY="157.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Bezirks:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="Behörden__ID" layoutX="107.0" layoutY="95.0" prefWidth="200.0" text="" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Zeitraum_Tab" text="Zeitraum">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Zeitraum_Liste" layoutX="555.0" layoutY="-4.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="256.0" onAction="#Zeitraum_loeschen" text="Eintrag löschen" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="360.0" layoutY="14.0" onAction="#Zeitraum_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="ändern" font="$x2" layoutX="366.0" layoutY="231.0" onAction="#Zeitraum_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Zeitraum_Startdatum_Text" layoutX="329.0" layoutY="60.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Zeitraum_Enddatum_Text" layoutX="329.0" layoutY="91.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="23.0" layoutY="56.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="54.0" text="Startdatum:" />
-                <Label id="label" font="$x3" layoutX="23.0" layoutY="83.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="54.0" text="Enddatum:" />
-                <Label id="label" fx:id="Zeitraum_ID_Label" font="$x4" layoutX="329.0" layoutY="122.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="16.0" layoutY="114.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Zeitraum_ID:" />
-                <Label id="label" fx:id="Zeitraum_Person_Label" font="$x4" layoutX="329.0" layoutY="154.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="146.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" fx:id="Zeitraum_Behörde_Label" font="$x4" layoutX="329.0" layoutY="184.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="12.0" layoutY="176.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Behörden_ID:" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="106.0" layoutY="231.0" onAction="#neuer_Eintrag_Zeitraum" text="neuen Eintrag erstellen" />
-                <TextField id="Sucheingabe" fx:id="Zeitraum_Startdatum" layoutX="94.0" layoutY="60.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Zeitraum_Enddatum" layoutX="94.0" layoutY="91.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Zeitraum_Person" layoutX="94.0" layoutY="154.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Person:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_Zeitraum_Behörde" layoutX="94.0" layoutY="184.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Behörde:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="Zeitraum__ID" layoutX="94.0" layoutY="122.0" prefWidth="200.0" text="" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Person_Tab" text="Person">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView id="Fall_Liste" fx:id="Person_Liste" layoutX="554.0" layoutY="0.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="126.0" layoutY="258.0" onAction="#neuer_Eintrag_Person" text="neuen Eintrag erstellen" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="380.0" layoutY="14.0" onAction="#Person_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="258.0" onAction="#Person_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="386.0" layoutY="258.0" onAction="#Person_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Person_Name_Text" layoutX="349.0" layoutY="58.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Geschlecht_Text" layoutX="349.0" layoutY="118.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="44.0" layoutY="58.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="37.0" text="Name:" />
-                <TextField id="Sucheingabe" fx:id="Person_Nationalität_Text" layoutX="349.0" layoutY="151.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Todesdatum_Text" layoutX="349.0" layoutY="215.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="19.0" layoutY="114.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="61.000099999997474" text="Geschlecht:" />
-                <Label id="label" font="$x3" layoutX="17.0" layoutY="142.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="61.0" text="Nationalität:" />
-                <Label id="label" font="$x3" layoutX="17.0" layoutY="211.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="61.0" text="Todesdatum:" />
-                <Label id="label" fx:id="Person_ID_Label" font="$x4" layoutX="349.0" layoutY="88.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="13.0" layoutY="84.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" font="$x3" layoutX="9.0" layoutY="179.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="75.0" text="Geburtsdatum:" />
-                <TextField id="Sucheingabe" fx:id="Person_Geburtsdatum_Text" layoutX="349.0" layoutY="183.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Name" layoutX="109.0" layoutY="59.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Geschlecht" layoutX="109.0" layoutY="119.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Nationalität" layoutX="109.0" layoutY="152.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Todesdatum" layoutX="109.0" layoutY="216.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person_Geburtsdatum" layoutX="109.0" layoutY="184.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Person__ID" layoutX="109.0" layoutY="89.0" prefWidth="200.0" text="" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Opfer_Tab" text="Opfer">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Opfer_Liste" layoutX="555.0" layoutY="0.0" prefHeight="240.0" prefWidth="165.0" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="257.0" onAction="#Opfer_loeschen" text="Eintrag löschen" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="386.0" layoutY="14.0" onAction="#Opfer_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <TextField id="Sucheingabe" fx:id="Suche_Opfer_Text" layoutX="7.0" layoutY="240.0" prefWidth="200.0" />
-                <Button id="suchen" font="$x2" layoutX="65.0" layoutY="265.0" onAction="#Suche_Opfer" text="suchen" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Person_Opfer" layoutX="16.0" layoutY="14.0" prefHeight="22.0" prefWidth="198.0" promptText="Person">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Label id="label" fx:id="Opfer_ID_Label" font="$x4" layoutX="355.0" layoutY="105.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Opfer_Name_Label" font="$x4" layoutX="355.0" layoutY="69.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="279.0" layoutY="101.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" font="$x3" layoutX="305.0" layoutY="65.0" minHeight="16.0" minWidth="34.0" prefHeight="30.0" prefWidth="34.0" text="Name:" />
-                <Label id="label" font="$x4" layoutX="23.0" layoutY="203.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="der gesuchten Person ein" />
-                <Label id="label" font="$x4" layoutX="23.0" layoutY="173.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="Bitte geben sie den Namen" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="32.0" layoutY="59.0" onAction="#neuer_Eintrag_Opfer" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Verdächtiger_Tab" text="Verdächtiger">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="Verdächtiger_Liste" layoutX="555.0" layoutY="0.0" prefHeight="242.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="372.0" layoutY="19.0" onAction="#Verdächtiger_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="578.0" layoutY="259.0" onAction="#Verdaechtiger_loeschen" text="Eintrag löschen" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Person_Verdächtiger" layoutX="16.0" layoutY="19.0" prefHeight="22.0" prefWidth="198.0" promptText="Person">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Label id="label" fx:id="Verdächtiger_ID_Label" font="$x4" layoutX="349.0" layoutY="112.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="Verdächtiger_Name_Label" font="$x4" layoutX="349.0" layoutY="75.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="273.0" layoutY="107.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" font="$x3" layoutX="299.0" layoutY="71.0" minHeight="16.0" minWidth="34.0" prefHeight="30.0" prefWidth="34.0" text="Name:" />
-                <TextField id="Sucheingabe" fx:id="Suche_Verdächtiger_Text" layoutX="3.0" layoutY="237.0" prefWidth="200.0" />
-                <Button id="suchen" fx:id="Suche_Verdächtiger" font="$x2" layoutX="61.0" layoutY="265.0" onAction="#Suche_Verdächtigen" text="suchen" />
-                <Label id="label" font="$x4" layoutX="19.0" layoutY="200.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="der gesuchten Person ein" />
-                <Label id="label" font="$x4" layoutX="19.0" layoutY="170.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="Bitte geben sie den Namen" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="32.0" layoutY="61.0" onAction="#neuer_Eintrag_Verdächtiger" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="Polizist_Tab" text="Polizist">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="698.0">
-              <children>
-                <ListView fx:id="Polizist_Liste" layoutX="554.0" layoutY="0.0" prefHeight="239.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="372.0" layoutY="25.0" onAction="#Polizist_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="258.0" onAction="#Polizist_loeschen" text="Eintrag löschen" />
-                <Button id="ändern" font="$x2" layoutX="378.0" layoutY="175.0" onAction="#Polizist_Eintrag_aendern" text="Eintrag ändern" />
-                <TextField id="Sucheingabe" fx:id="Polizist_Dienstgrad" layoutX="11.0" layoutY="76.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_Person_Polizist" layoutX="13.0" layoutY="14.0" prefHeight="22.0" prefWidth="198.0" promptText="Person">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="Polizist_Dienstgrad_Text" layoutX="341.0" layoutY="133.0" prefWidth="200.0" text="" />
-                <Label id="label" fx:id="Polizist_ID_Label" font="$x4" layoutX="341.0" layoutY="103.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="274.0" layoutY="128.0" minHeight="16.0" minWidth="55.0" prefHeight="30.0" prefWidth="55.0" text="Dienstgrad:" />
-                <Label id="label" font="$x3" layoutX="268.0" layoutY="98.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" font="$x3" layoutX="294.0" layoutY="67.0" minHeight="16.0" minWidth="34.0" prefHeight="30.0" prefWidth="34.0" text="Name:" />
-                <Label id="label" fx:id="Polizist_Name_Label" font="$x4" layoutX="341.0" layoutY="72.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="Suche_Polizist_Text" layoutX="0.0" layoutY="240.0" prefWidth="200.0" />
-                <Button id="suchen" fx:id="Suche_Polizist" font="$x2" layoutX="58.0" layoutY="268.0" onAction="#Suche_Polizist" text="suchen" />
-                <Label id="label" font="$x4" layoutX="16.0" layoutY="203.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="der gesuchten Person ein" />
-                <Label id="label" font="$x4" layoutX="16.0" layoutY="173.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="153.0" text="Bitte geben sie den Namen" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="28.0" layoutY="107.0" onAction="#neuer_Eintrag_Polizist" text="neuen Eintrag erstellen" />
-                <Label id="label" font="$x4" layoutX="14.0" layoutY="50.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Dienstgrad einfügen:" />
-              </children>
-            </AnchorPane>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
           </content>
         </Tab>
       </tabs>
     </TabPane>
-    <TabPane layoutX="6.0" layoutY="397.0" prefHeight="307.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE">
-      <tabs>
-        <Tab id="liegt_in_Tab" text="liegt_in">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="liegt_in_Liste" layoutX="554.0" layoutY="2.0" prefHeight="192.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="377.0" layoutY="16.0" onAction="#liegt_in_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="215.0" onAction="#liegt_in_loeschen" text="Eintrag löschen" />
-                <Label id="label" fx:id="liegt_in_Oberbezirk_Label" font="$x4" layoutX="346.0" layoutY="97.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="liegt_in_Bezirk_Label" font="$x4" layoutX="346.0" layoutY="67.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_liegt_in_Bezirk" layoutX="26.0" layoutY="64.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Bezirkes:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_liegt_in_Oberbezirk" layoutX="26.0" layoutY="95.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Oberbezirkes:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Button id="Fall_Eintrag" font="$x2" layoutX="42.0" layoutY="155.0" onAction="#neuer_Eintrag_liegt_in" text="neuen Eintrag erstellen" />
-                <Label id="label" font="$x3" layoutX="287.0" layoutY="63.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="54.0" text="Bezirks_ID:" />
-                <Label id="label" font="$x3" layoutX="265.0" layoutY="94.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="76.0" text="Oberbezirks_ID:" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="betrifft_Opfer_Tab" text="betrifft_Opfer">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="betrifft_Opfer_Liste" layoutX="554.0" layoutY="0.0" prefHeight="196.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="380.0" layoutY="14.0" onAction="#betrifft_Opfer_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="221.0" onAction="#betrifft_Opfer_loeschen" text="Eintrag löschen" />
-                <Label id="label" fx:id="betrifft_Opfer_Person_Label" font="$x4" layoutX="349.0" layoutY="87.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" fx:id="betrifft_Opfer_Verbrechen_Label" font="$x4" layoutX="349.0" layoutY="56.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_betrifft_Opfer_Verbrechen" layoutX="17.0" layoutY="56.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Verbrechens:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_betrifft_Opfer_Person" layoutX="17.0" layoutY="87.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Person:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Button id="Fall_Eintrag" font="$x2" layoutX="33.0" layoutY="138.0" onAction="#neuer_Eintrag_betrifft_Opfer" text="neuen Eintrag erstellen" />
-                <Label id="label" font="$x3" layoutX="267.0" layoutY="52.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="76.0" text="Verbrechens_ID:" />
-                <Label id="label" font="$x3" layoutX="281.0" layoutY="83.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="betrifft_Verdächtigen_Tab" text="betrifft_Verdächtigen">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="betrifft_Verdächtigen_Liste" layoutX="554.0" layoutY="0.0" prefHeight="194.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="372.0" layoutY="14.0" onAction="#betrifft_Verdächtigen_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="ändern" font="$x2" layoutX="378.0" layoutY="169.0" onAction="#betrifft_Verdächtigen_Eintrag_aendern" text="Eintrag ändern" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="221.0" onAction="#betrifft_Verdächtigen_loeschen" text="Eintrag löschen" />
-                <Label id="label" fx:id="betrifft_Verdächtigen_Person_Label" font="$x4" layoutX="341.0" layoutY="84.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <TextField id="Sucheingabe" fx:id="betrifft_Verdächtigen_Überführung_Text" layoutX="341.0" layoutY="112.0" prefWidth="200.0" text="" />
-                <Label id="label" fx:id="betrifft_Verdächtigen_Verbrechen_Label" font="$x4" layoutX="341.0" layoutY="53.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_betrifft_Verdächtigen_Verbrechen" layoutX="16.0" layoutY="53.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Verbrechens:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_betrifft_Verdächtigen_Person" layoutX="16.0" layoutY="84.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Person:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <TextField id="Sucheingabe" fx:id="betrifft_Verdächtigen_Überführung" layoutX="16.0" layoutY="112.0" prefWidth="200.0" text="" />
-                <Button id="Fall_Eintrag" font="$x2" layoutX="32.0" layoutY="169.0" onAction="#neuer_Eintrag_betrifft_Verdächtigen" text="neuen Eintrag erstellen" />
-                <Label id="label" font="$x3" layoutX="250.0" layoutY="48.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="76.0" text="Verbrechens_ID:" />
-                <Label id="label" font="$x3" layoutX="264.0" layoutY="79.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" font="$x3" layoutX="261.0" layoutY="107.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="68.0" text="Überführung:" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab id="arbeitet_an_Tab" text="arbeitet_an">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ListView fx:id="arbeitet_an_Liste" layoutX="554.0" layoutY="0.0" prefHeight="194.0" prefWidth="165.0" />
-                <Button id="Eintrag_anzeigen" font="$x2" layoutX="360.0" layoutY="14.0" onAction="#arbeitet_an_Eintrag_anzeigen" text="Eintrag anzeigen" />
-                <Button id="ändern" font="$x2" layoutX="367.0" layoutY="194.0" onAction="#arbeitet_an_Eintrag_aendern" text="Eintrag ändern" />
-                <Button id="löschen" font="$x2" layoutX="577.0" layoutY="222.0" onAction="#arbeitet_an_loeschen" text="Eintrag löschen" />
-                <TextField id="Sucheingabe" fx:id="arbeitet_an_Startdatum_Text" layoutX="324.0" layoutY="55.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="arbeitet_an_Enddatum_Text" layoutX="324.0" layoutY="86.0" prefWidth="200.0" text="" />
-                <Label id="label" font="$x3" layoutX="23.0" layoutY="51.0" minHeight="16.0" minWidth="37.0" prefHeight="30.0" prefWidth="54.0" text="Startdatum:" />
-                <Label id="label" font="$x3" layoutX="23.0" layoutY="78.0" minHeight="16.0" minWidth="25.0" prefHeight="30.0" prefWidth="54.0" text="Enddatum:" />
-                <Label id="label" fx:id="arbeitet_an_Person_Label" font="$x4" layoutX="324.0" layoutY="117.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="14.0" layoutY="111.0" minHeight="16.0" minWidth="54.999900000002526" prefHeight="30.0" prefWidth="68.0" text="Personen_ID:" />
-                <Label id="label" fx:id="arbeitet_an_Fall_Label" font="$x4" layoutX="324.0" layoutY="149.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="" />
-                <Label id="label" font="$x3" layoutX="39.0" layoutY="141.0" minHeight="16.0" minWidth="43.0" prefHeight="30.0" prefWidth="43.0" text="Fall_ID:" />
-                <TextField id="Sucheingabe" fx:id="arbeitet_an_Startdatum" layoutX="89.0" layoutY="55.0" prefWidth="200.0" text="" />
-                <TextField id="Sucheingabe" fx:id="arbeitet_an_Enddatum" layoutX="89.0" layoutY="86.0" prefWidth="200.0" text="" />
-                <ComboBox id="combobox_Art" fx:id="combobox_arbeitet_an_Person" layoutX="89.0" layoutY="117.0" prefHeight="22.0" prefWidth="198.0" promptText="Name der Person:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <ComboBox id="combobox_Art" fx:id="combobox_arbeitet_an_Fall" layoutX="89.0" layoutY="149.0" prefHeight="22.0" prefWidth="198.0" promptText="Name des Falls:">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ComboBox>
-                <Button id="Fall_Eintrag" font="$x2" layoutX="105.0" layoutY="194.0" onAction="#neuer_Eintrag_arbeitet_an" text="neuen Eintrag erstellen" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-      </tabs>
-    </TabPane>
-    <Label id="label" font="$x1" layoutX="6.0" layoutY="367.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Beziehungen" />
+    <Label id="label" fx:id="Zutat10_Label" layoutX="533.0" layoutY="603.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 10">
+      <font>
+        <Font size="12.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label id="label" fx:id="Zutat7_Label" font="$x1" layoutX="336.0" layoutY="573.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 7" />
+    <Label id="label" fx:id="Zutat4_Label" font="$x1" layoutX="533.0" layoutY="510.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 4" />
+    <Label id="label" fx:id="Zutat1_Label" font="$x1" layoutX="336.0" layoutY="478.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 1" />
+    <Label id="label" fx:id="Zutat2_Label" font="$x1" layoutX="533.0" layoutY="478.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 2" />
+    <Label id="label" fx:id="Zutat3_Label" font="$x1" layoutX="336.0" layoutY="510.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 3" />
+    <Label id="label" fx:id="Zutat5_Label" font="$x1" layoutX="336.0" layoutY="540.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 5" />
+    <Label id="label" fx:id="Zutat6_Label" font="$x1" layoutX="533.0" layoutY="540.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 6" />
+    <Label id="label" fx:id="Zutat8_Label" font="$x1" layoutX="533.0" layoutY="573.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 8" />
+    <Label id="label" fx:id="Zutat9_Label" font="$x1" layoutX="336.0" layoutY="603.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 9" />
+    <Label id="label" fx:id="Zutat11_Label" font="$x1" layoutX="336.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 11" />
+    <Label id="label" fx:id="Zutat12_Label" font="$x1" layoutX="533.0" layoutY="635.0" minHeight="16.0" minWidth="69.0" prefHeight="22.0" prefWidth="189.0" text="Zutat 12" />
+    <ListView fx:id="Rezepte_Liste" layoutX="90.0" layoutY="418.0" prefHeight="239.0" prefWidth="165.0" />
+    <Button id="Rezept_anzeigen" layoutX="428.0" layoutY="430.0" onAction="#Zutaten_anzeigen" text="Zutaten des Rezepts anzeigen">
+      <font>
+        <Font size="14.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Label id="label" font="$x3" layoutX="90.0" layoutY="372.0" minHeight="16.0" minWidth="69.0" prefHeight="30.0" prefWidth="165.0" text="Ihre Rezeptvorschläge:" />
+    <Button id="Rezepte_finden" font="$x2" layoutX="114.0" layoutY="323.0" onAction="#Rezepte_anzeigen" text="Rezepte finden" />
   </children>
 </AnchorPane>
