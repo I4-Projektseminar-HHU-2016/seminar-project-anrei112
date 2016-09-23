@@ -5,14 +5,11 @@
  */
  
 package javafxapplication2;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -21,27 +18,9 @@ import java.sql.Statement;
 import javafx.scene.control.ListView;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-import javafx.stage.FileChooser;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.PreparedStatement;
-import javax.imageio.ImageIO;
-import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  * @author Annika Reich
@@ -93,7 +72,6 @@ public class FXMLDocumentController implements Initializable {
     // Rezepte herausfiltern
     @FXML
     private void Rezepte_anzeigen(ActionEvent event) {
-
         try {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);
@@ -116,7 +94,6 @@ public class FXMLDocumentController implements Initializable {
             if (checkbox_Tomaten.isSelected()) {
                 queryString = queryString+" AND Name_Zutat_6 = '"+checkbox_Tomaten.getText()+"'";
             }
-            System.out.println(combobox_Beilage.getSelectionModel().getSelectedIndex() + " " + queryString);
             ResultSet rs = statement.executeQuery(queryString);
             Rezepte_Liste.getItems().clear();
             while(rs.next()) {
@@ -126,9 +103,7 @@ public class FXMLDocumentController implements Initializable {
         catch(SQLException e) {
             System.err.println(e.getMessage());
         }
-        
-            aktualisieren();
-        
+            aktualisieren();   
     }
     
     @FXML
