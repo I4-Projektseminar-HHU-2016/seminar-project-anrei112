@@ -35,12 +35,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-You need an editor like "NetBeans IDE" to run this script.
-If you have installed it, you can continue as follows:
-First open the project in the editor.
-For opening it you have to open the editor. Then click on "file" and "open project" and choose the project "Rezepte_DB".
-Afterwards you have to execute the programm by clicking on the green arrow or "run" and "run project".
-The GUI will open up.
+To run the script you have to download the folder "Rezepte_DB".
+Now open the command line (CMD) and navigate to the folder, where the downloaded folder is.
+Use the command "cd" to navigate.
+Then navigate to the folder "Rezepte_DB", then to the folder "src".
+After that you can run the script by using the command "java FXMLDocumentController.java".
+Finally the GUI should be shown successively.
+
+Optionally you can open the project with an editor and run the script.
 
 ## Versioning
 
